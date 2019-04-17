@@ -1,25 +1,63 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from './views/Home.vue'
+import EditorHome from '@/components/EditorHome'
+import ModelContainer from '@/components/ModelContainer'
+import ImportExport from '@/components/ImportExport'
+import Activity from '@/components/Activity'
+import Vocabulary from '@/components/Vocabulary'
+import Population from '@/components/Population'
+import Sparql from '@/components/Sparql'
+import About from '@/components/About'
+import UserGuide from '@/components/UserGuide'
 
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history',
-  base: process.env.BASE_URL,
   routes: [
     {
       path: '/',
-      name: 'home',
-      component: Home
+      name: 'EditorHome',
+      component: EditorHome
+    },
+    {
+      path: '/model',
+      name: 'ModelContainer',
+      component: ModelContainer
+    },
+    {
+      path: '/import-export',
+      name: 'ImportExport',
+      component: ImportExport
+    },
+    {
+      path: '/activity',
+      name: 'Activity',
+      component: Activity
+    },
+    {
+      path: '/vocabulary',
+      name: 'Vocabulary',
+      component: Vocabulary
+    },
+    {
+      path: '/sparql',
+      name: 'Sparql',
+      component: Sparql
+    },
+    {
+      path: '/population',
+      name: 'Population',
+      component: Population
     },
     {
       path: '/about',
-      name: 'about',
-      // route level code-splitting
-      // this generates a separate chunk (about.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
-      component: () => import(/* webpackChunkName: "about" */ './views/About.vue')
+      name: 'About',
+      component: About
+    },
+    {
+      path: '/user-guide',
+      name: 'UserGuide',
+      component: UserGuide
     }
   ]
 })
